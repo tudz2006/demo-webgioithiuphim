@@ -506,5 +506,52 @@
         "duration": "2h 35m",
         "rating": 5,
         "note": "Epic sci-fi sequel with stunning visuals and complex political intrigue"
+    },
+    {
+        "id": 48,
+        "name": "Nhà gia tiên",
+        "id_theloai": [4,10,11],
+        "tacgia": "Huỳnh Lập",
+        "description": "Nhà Gia Tiên xoay quanh câu chuyện đa góc nhìn về các thế hệ khác nhau trong một gia đình, có hai nhân vật chính là Gia Minh (Huỳnh Lập) và Mỹ Tiên (Phương Mỹ Chi). Trở về căn nhà gia tiên để quay các video “triệu view” trên mạng xã hội, Mỹ Tiên – một nhà sáng tạo nội dung thuộc thế hệ Z vốn không tin vào chuyện tâm linh, hoàn toàn mất kết nối với gia đình, bất ngờ nhìn thấy Gia Minh – người anh trai đã mất từ lâu. Để hồn ma của Gia Minh có thể siêu thoát và không tiếp tục làm phiền mình, Mỹ Tiên bắt tay cùng Gia Minh lên kế hoạch giữ lấy căn nhà gia tiên đang bị họ hàng tranh chấp, đòi ông nội chia tài sản. Đứng trước hàng loạt bí mật động trời trong căn nhà gia tiên, liệu Mỹ Tiên có vượt qua được tất cả để hoàn thành di nguyện của Gia Minh",
+        "image": "https://motchilltv.fm/wp-content/uploads/2025/02/nha-gia-tien.jpg",
+        "trailer": "example",
+        "duration": "2h 35m",
+        "rating": 5,
+        "note": ""
+    },
+    {
+        "id": 49,
+        "name": "Đảo cuồng sát",
+        "id_theloai": [2],
+        "tacgia": "Ferry Pei Irawan",
+        "description": "Chuyến du lịch tuyệt vời trở thành ác mộng khi Dara và bạn bè phát hiện những thi thể không hoàn chỉnh rải rác khắp nơi trên đảo gây ra bởi 1 kẻ tâm trí cuồng loạn. Họ phải tìm mọi cách sống sót trong lúc chờ đợi được giải cứu.",
+        "image": "https://cdn.moveek.com/storage/media/cache/tall/67ad9867031a9582815106.jpg",
+        "trailer": "example",
+        "duration": "2h 35m",
+        "rating": 5,
+        "note": ""
+    },
+    {
+        "id": 50,
+        "name": "NGƯỜI SẮT - IRON MAN",
+        "id_theloai": [1,6,12],
+        "tacgia": "Jon Favreau",
+        "description": "Tony Stark vừa là chủ tập đoàn công nghệ, vừa là một tay chơi kỳ dị. Trong chuyến thị sát Afghanistan, ông bị nhóm khủng bố bắt cóc. Chúng đòi Tony chế tạo thứ vũ khí hủy diệt để tấn công nước Mỹ.  Nhận ra sự thật phũ phàng rằng, những vũ khí do mình chế tạo đang quay ngược lại tấn công chính mình, Tony bắt tay chế tạo bộ giáp công nghệ cao. Tẩu thoát khỏi nơi giam cầm, Tony trở thành đại diện công lý dưới biệt danh Người sắt. Trong khi đó, người đồng sự trong tập đoàn Stark âm mưu lật đổ Tony.  Bộ phim mở ra câu chuyện trong tương lai về nhóm siêu anh hùng Avenger khi tổ chức bí mật SHIELD bắt đầu lộ diện.",
+        "image": "https://motchilltv.fm/wp-content/uploads/2024/12/nguoi-sat-8633-thumb.webp",
+        "trailer": "example",
+        "duration": "2h 35m",
+        "rating": 5,
+        "note": ""
+    },
+    {
+        "id": 51,
+        "name": "Na Tra: Ma Đồng Náo Hải",
+        "id_theloai": [1,6],
+        "tacgia": "Jiaozi",
+        "description": "Na Tra: Ma Đồng Náo Hải là một bộ phim hoạt hình Trung Quốc kể về câu chuyện của Na Tra, một cậu bé sinh ra với sức mạnh phi thường nhưng bị hiểu lầm và xa lánh bởi mọi người. Với sự giúp đỡ của bạn bè và gia đình, Na Tra phải vượt qua những thử thách để chứng minh bản thân và bảo vệ thế giới khỏi những thế lực đen tối.",
+        "image": "https://www.bhdstar.vn/wp-content/uploads/2025/02/referenceSchemeHeadOfficeallowPlaceHoldertrueheight700ldapp-6.jpg",
+        "trailer": "https://www.youtube.com/watch?v=example",
+        "duration": "1h 50m",
+        "rating": 5
     }
 ]

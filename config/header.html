@@ -26,10 +26,10 @@
         <a class="nav-link" href="../index.html">Trang chủ</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Phim mới</a>
+        <a class="nav-link" href="../phim-moi.html">Phim mới</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Phim nhiều người xem</a>
+        <a class="nav-link" href="../phim-nhieu-nguoi-xem.html">Phim nhiều người xem</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -107,6 +107,31 @@
 
         document.getElementById("carousel").innerHTML = carouselHtml;
       })();
+
+      (async () => {
+        //phimhot 
+        let phimhots = await db.query("SELECT * FROM phimhot");
+        phimhots = phimhots.fetch_all();
+        let movieResult = await db.query("SELECT * FROM movie");
+        let movies = movieResult.fetch_all();
+        let htmlIndicators = "";
+        let htmlItems = "";
+        let slideIndex = 0;
+
+        for (let phimhot of phimhots) {
+          for (let movie of movies) {
+            if (movie.id == phimhot.id_movie) {
+              htmlItems += `<div class="movie-item">
+                <a href="../gioithieuphim.html?id=${movie.id}">
+                  <img src="${movie.image}" class="d-block w-100" alt="${movie.name}">
+                  <div class="movie-title">${movie.name}</div>
+                </a>
+              </div>`;
+            }
+          }
+        }
+        document.getElementById("phimhot").innerHTML = htmlItems;
+      })();
       break;
     case "theloai.html":
       let url = new URL(window.location.href);
@@ -178,6 +203,73 @@
           }
         }
         document.getElementById("gioithieuphim").innerHTML = html;
+      })();
+
+      //random phimkhac 4-5 phim
+      (async () => {
+        let result = await db.query("SELECT * FROM movie");
+        result = result.fetch_all();
+        let html = "";
+        let random = Math.floor(Math.random() * (result.length - 4));
+        for (let i = random; i < random + 5; i++) {
+          if (result[i].id != id2) {
+            html += `<li>
+              <a href="../gioithieuphim.html?id=${result[i].id}" class="text-light">${result[i].name}</a>
+            </li>`;
+          }
+        }
+        document.getElementById("phimkhac").innerHTML = html;
+      })();
+      
+      break;
+      case "phim-moi.html":
+      (async () => {
+        let result = await db.query("SELECT * FROM phimmoi");
+        result = result.fetch_all();
+        let movieResult = await db.query("SELECT * FROM movie");
+        let movies = movieResult.fetch_all();
+        let html = "";
+        for (let row of result) {
+          for (let movie of movies) {
+            if (movie.id == row.id) {
+              html += `<div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-4">
+                <div class="movie-item">
+                  <a href="../gioithieuphim.html?id=${movie.id}" class="link">
+                    <img src="${movie.image}" alt="${movie.name}">
+                    <p>${movie.name}</p>
+                  </a>
+                </div>
+              </div>`;
+            }
+          }
+        }
+
+      
+      document.getElementById("movie").innerHTML = html;
+    })();
+    break;
+    case "phim-nhieu-nguoi-xem.html":
+      (async () => {
+        let result = await db.query("SELECT * FROM phimnhieunguoixem");
+        result = result.fetch_all();
+        let movieResult = await db.query("SELECT * FROM movie");
+        let movies = movieResult.fetch_all();
+        let html = "";
+        for (let row of result) {
+          for (let movie of movies) {
+            if (movie.id == row.id) {
+              html += `<div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-4">
+                <div class="movie-item">
+                  <a href="../gioithieuphim.html?id=${movie.id}" class="link">
+                    <img src="${movie.image}" alt="${movie.name}">
+                    <p>${movie.name}</p>
+                  </a>
+                </div>
+              </div>`;
+            }
+          }
+        }
+        document.getElementById("movie").innerHTML = html;
       })();
       break;
   }

@@ -36,8 +36,16 @@
         "ten": "Tâm lý"
     },
     {
+        "id": 10,
+        "ten": "Gia đình"
+    },
+    {
         "id": 11,
-        "ten": "Lịch sử"
+        "ten": "Tâm linh"
+    },
+    {
+        "id": 12,
+        "ten": "Khoa học"
     },
     {
         "id": 13,
