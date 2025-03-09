@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "ten": "Hành động"
+    },
+    {
+        "id": 2,
+        "ten": "Kinh dị"
+    },
+    {
+        "id": 3,
+        "ten": "Tình cảm"
+    },
+    {
+        "id": 4,
+        "ten": "Hài hước"
+    },
+    {
+        "id": 5,
+        "ten": "Hoạt hình"
+    },
+    {
+        "id": 6,
+        "ten": "Phiêu lưu"
+    },
+    {
+        "id": 7,
+        "ten": "Viễn tưởng"
+    },
+    {
+        "id": 8,
+        "ten": "Chiến tranh"
+    },
+    {
+        "id": 9,
+        "ten": "Tâm lý"
+    },
+    {
+        "id": 11,
+        "ten": "Lịch sử"
+    },
+    {
+        "id": 13,
+        "ten": "Cổ trang"
+    },
+    {
+        "id": 20,
+        "ten": "Anime"
+    }
+]

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="../assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../assets/image/favicon.ico" type="image/x-icon">
+    <title>Tìm kiếm</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../config/styles.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../config/loader.js"></script>
+    <script src="../config/db/db.js"></script>
+    
+  </head>
+  <body>
+    <div id="header"></div>
+    <div id="list"></div>
+    <script>
+      function removeDiacritics(str) {
+        return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      }
+      const params = new URLSearchParams(window.location.search);
+      const search = params.get("search") || "0";
+      (async () => {
+        let result = await db.query(`SELECT * FROM movie`);
+        result = result.fetch_all();
+        let html = `<h3 class="text-white">Kết quả tìm kiếm cho "${search}"</h3>`;
+        for (let row of result) {
+          let name = removeDiacritics(row.name.toLowerCase());
+          let search1 = removeDiacritics(search.toLowerCase());
+          if (name.includes(search1)){
+            html += `<div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-4">
+              <div class="movie-item">
+                <a href="../gioithieuphim.html?id=${row.id}" class="link">
+                  <img src="${row.image}" alt="Movie 1">
+                  <p>${row.name}</p>
+                </a>  
+              </div>
+            </div>`;  
+          }
+          
+        }
+        document.getElementById("list").innerHTML = html;
+      })();
+
+    </script>
+    
+    <div id="footer"></div>
+  </body>

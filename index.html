@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="vi" data-bs-theme="auto">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="../assets/image/favicon.ico" type="image/x-icon">
+        <title>Trang chủ</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+        <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../config/styles.css">
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+        <script src="../assets/js/color-modes.js"></script>
+        <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="../config/loader.js"></script>
+        <script src="../config/db/db.js"></script>
+    </head>
+    <body>
+        <div id="header"></div>
+        <div class="carousel-container" id="carousel">
+            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-touch="true">
+                <div class="carousel-indicators">
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <a href="#">
+                            <img src="https://img.phimmoichill.blog/images/info/the-gorge.jpg" class="d-block w-100" alt="Hình 1">
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="#">
+                            <img src="https://img.phimmoichill.blog/images/info/rumours.jpg" class="d-block w-100" alt="Hình 2">
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="#">
+                            <img src="https://img.phimmoichill.blog/images/info/flight-risk.jpg" class="d-block w-100" alt="Hình 3">
+                        </a>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="movie-list-wrapper">
+        <h3 class="text-white">Phim Hành Động</h3>
+        <button class="scroll-btn scroll-left">←</button>
+        <div class="movie-list">
+            <div class="movie-item">
+                <a href="#">
+                    <img src="https://cdn.galaxycine.vn/media/2025/2/17/nha-gia-tien-500_1739775156127.jpg" class="d-block w-100" alt="Phim 1">
+                    <div class="movie-title">Nhà gia tiên</div>
+                </a>
+            </div>
+            <div class="movie-item">
+                <a href="#">
+                    <img src="https://cdn.galaxycine.vn/media/2025/2/21/hit-an-fun-1_1740112324696.jpg" class="d-block w-100" alt="Phim 2">
+                    <div class="movie-title">hit an fun</div>
+                </a>
+            </div>
+            <div class="movie-item">
+                <a href="/review/1.html">
+                    <img src="https://cdn.galaxycine.vn/media/2025/2/24/interstellar-1_1740384205450.jpg" class="d-block w-100" alt="Phim 3">
+                    <div class="movie-title">interstellar</div>
+                </a>
+            </div>
+            <div class="movie-item">
+                <a href="#">
+                    <img src="https://cdn.galaxycine.vn/media/2025/2/12/dao-cuong-sat-500_1739343935153.jpg" class="d-block w-100" alt="Phim 4">
+                    <div class="movie-title">Đảo cuồng sát</div>
+                </a>
+            </div>
+            <div class="movie-item">
+                <a href="#">
+                    <img src="https://cdn.galaxycine.vn/media/2024/7/22/deadpool--wolverine-500_1721640472363.jpg" class="d-block w-100" alt="Phim 5">
+                    <div class="movie-title">Deaddpool</div>
+                </a>
+            </div>
+            <div class="movie-item">
+                <a href="#">
+                    <img src="https://upload.wikimedia.org/wikipedia/vi/thumb/7/70/Ironmanposter.JPG/330px-Ironmanposter.JPG" class="d-block w-100" alt="Phim 6">
+                    <div class="movie-title">Iron man</div>
+                </a>
+            </div>
+            <div class="movie-item">
+                <a href="#">
+                    <img src="https://www.bhdstar.vn/wp-content/uploads/2025/02/referenceSchemeHeadOfficeallowPlaceHoldertrueheight700ldapp-6.jpg" class="d-block w-100" alt="Phim 7">
+                    <div class="movie-title">NA TRA 2 : MA ĐỒNG NÁO HẢI</div>
+                </a>
+            </div>
+        </div>
+        
+        <button class="scroll-btn scroll-right">→</button>
+        </div>
+        <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const movieList = document.querySelector(".movie-list");
+            const scrollLeftBtn = document.querySelector(".scroll-left");
+            const scrollRightBtn = document.querySelector(".scroll-right");
+            
+            const scrollAmount = 300; // Số pixel cuộn mỗi lần nhấn
+            
+            scrollLeftBtn.addEventListener("click", function () {
+                movieList.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+            });
+            
+            scrollRightBtn.addEventListener("click", function () {
+                movieList.scrollBy({ left: scrollAmount, behavior: "smooth" });
+            });
+        });
+
+        </script>
+        <div id="footer"></div>
+
+
+    </body>
+</html>
